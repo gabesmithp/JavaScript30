@@ -64,11 +64,16 @@
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
-    console.log(key)
+    key.classList.add('playing');
   });
+
+  window.addEventListener('keyup', function(e) {
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+    key.classList.remove('playing');
+  })
 
 </script>
 
-
+ 
 </body>
 </html>
